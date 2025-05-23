@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard Pemilihan</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Dashboard Pemilihan Ketua HMTE</h1>
+
+  <div class="tabs">
+    <button id="tab-voting-btn" class="tab-btn active" onclick="showTab('voting')">Voting</button>
+    <button id="tab-statistik-btn" class="tab-btn" onclick="unlockStat()">Statistik (Kunci)</button>
+  </div>
+
+  <div id="tab-voting" class="tab-content active">
+
+    <div class="form-group">
+      <input type="text" id="nama" placeholder="Nama Lengkap" />
+      <input type="text" id="npm" placeholder="NPM" />
+      <button onclick="enableVoting()">Mulai Memilih</button>
+    </div>
+
+    <div id="candidates" class="grid" style="display:none;">
+      <div class="card" onclick="vote('Aldi')">
+        <img src="aldi.jpg" alt="Aldi" />
+        <h2>Aldi</h2>
+      </div>
+      <div class="card" onclick="vote('Budi')">
+        <img src="budi.jpg" alt="Budi" />
+        <h2>Budi</h2>
+      </div>
+      <div class="card" onclick="vote('Citra')">
+        <img src="citra.jpg" alt="Citra" />
+        <h2>Citra</h2>
+      </div>
+    </div>
+
+    <p id="status" class="status"></p>
+  </div>
+
+  <div id="tab-statistik" class="tab-content" style="display:none;">
+    <canvas id="chart" width="400" height="400"></canvas>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
